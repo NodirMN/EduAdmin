@@ -1,0 +1,16 @@
+{
+  "teachers": [
+    {
+      "name": "Nodir",
+      "phone": "+998946140194",
+      "email": "998977079405@mail.ru",
+      "id": 1
+    },
+    {
+      "name": "Nodir",
+      "phone": "+998946140194",
+      "email": "998977079405@mail.ru",
+      "id": 2
+    }
+  ]
+}
