@@ -12,7 +12,7 @@
             v-mode='search'
         ></v-text-field>
         <div class="teachers__list">
-            <div class="techer__box" v-for='(teacher, index) of teachers' :key="index">   
+            <div class="teacher__box" v-for='(teacher, index) of filteredTeachers' :key="index">   
                 <div class="teacher__name">{{teacher.name}}</div>
                 <div class="teacher__phone">{{teacher.phone}}</div>
             </div>
@@ -121,13 +121,30 @@ export default {
         }
     },
     computed:{
+        filteredTeachers(){
+            return this.$store.getters.searchTeacher(this.search)
+        },
         teachers(){
             return this.$store.getters.teachers
         }
+    },
+    created(){
+        this.$store.dispatch('allTeacher')
     }
 }
 </script>
 
-<style>
-
+<style lang='scss'>
+.teacher{
+    &__box{
+        display: flex;
+        background: #fff;
+        box-shadow: 0px 0px 5px #118AB2;
+        border-radius: 12px;
+        align-items: center;
+        padding: 22px 34px;
+        margin-bottom: 15px;
+        justify-content: space-between;
+        }
+    }
 </style>

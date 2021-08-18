@@ -44,6 +44,13 @@ const teacher = {
                 })
                 return teacher 
             }
+        },
+        searchTeacher(state) {
+            return search => {
+                    return state.teachers.filter(teacher=>{
+                        return teacher.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+                    })
+            }
         }
     },
     mutations: {
